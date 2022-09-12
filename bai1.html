@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="a"></p>
+<input id="valueB" type="text" placeholder="Even --- Even">
+<button onclick="Even()">Click!</button>
+<p id="b"></p>
+<input id ="valueC" type="text" placeholder="Uppercase -- Lowercase">
+<button onclick="UpLowcase()">Click1</button>
+<p id="c"></p>
+
+</body>
+<script>
+    let a = ["Red", "Green", "White", "Black"];
+
+
+    document.getElementById('a').innerText = a.join(', ')
+
+    function Even(){
+        let num = +document.getElementById('valueB').value
+        let str = num.toString()
+        let result = [str[0]]
+        for (let i = 1; i < str.length; i++) {
+            if((str[i-1]%2===0)&&(str[i]%2===0)){
+                result.push('-', str[i])
+            } else {
+                result.push(str[i])
+            }
+        }
+        document.getElementById('b').innerText = result.join('')
+    }
+
+    function UpLowcase(){
+        let str = document.getElementById('valueC').value
+        let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let result = []
+
+        for (let i = 0; i < str.length; i++) {
+            if (UPPER.indexOf(str[i]) !== -1){
+                result.push(str[i].toLowerCase());
+            } else if(LOWER.indexOf(str[i]) !== -1){
+                result.push(str[i].toUpperCase());
+            } else {
+                result.push(str[i]);
+            }
+        }
+        document.getElementById('c').innerText = result.join('')
+    }
+
+</script>
+</html>

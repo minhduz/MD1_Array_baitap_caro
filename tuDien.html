@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="input" type="text">
+<button onclick="dich()">Click!</button>
+<p id="output"></p>
+</body>
+<script>
+
+    function dich(){
+        let English = ['Fuck your mother','full cunt','dog','cat']
+        let vietNamEse = ['dmm','vcl','chó','mèo']
+
+        let word = document.getElementById('input').value
+
+        for (let i = 0; i < vietNamEse.length; i++) {
+            if (word===vietNamEse[i]){
+                console.log(word)
+                document.getElementById('output').innerText = English[i]
+                return
+            } else {
+                alert('đéo có từ này trong từ điển')
+                return;
+            }
+        }
+    }
+
+
+</script>
+</html>
